@@ -1,0 +1,23 @@
+---
+pagination:
+  data: collections.tagList
+  size: 1
+  alias: tag
+---
+<h1>Posts tagged "{{ tag }}"</h1>
+
+{% for post in collections[tag] | reverse %}
+<article>
+    <p>
+        {% if post.data.external_url %}
+            <a href="{{ post.data.external_url }}">{{ post.data.title }}</a>
+        {% else %}
+            {{ post.data.title }}
+        {% endif %}. 
+        {{ post.templateContent | excerpt | safe }}
+    </p>
+    <div class="post-meta"><a href="{{ post.url }}">#</a> / <span class="post-tags">{{ post.data.tags | formatTags }}</span> / {{ post.date | formatDate }}</div>
+</article>
+{% endfor %}
+
+<p><a href="/tags">← All tags</a></p> 

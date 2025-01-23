@@ -1,0 +1,6 @@
+{
+    "layout": "post",
+    "eleventyComputed": {
+        "permalink": "{% if title %}/{{ page.fileSlug }}/{% else %}/{{ content | excerpt | generateSlug }}/{% endif %}"
+    }
+} 

@@ -1,0 +1,11 @@
+---
+layout: base
+title: Tags
+---
+<h1>Tags</h1>
+
+<div class="tags-list">
+{% for tag in collections.tagList %}
+    <a href="/tags/{{ tag }}" class="tag">{{ tag }} ({{ collections[tag] | length }})</a>
+{% endfor %}
+</div> 

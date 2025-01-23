@@ -1,0 +1,16 @@
+---
+layout: base
+---
+{% for post in collections.posts %}
+<article>
+    {% if post.data.title %}
+        {% if post.data.external_url %}
+            <a href="{{ post.data.external_url }}">{{ post.data.title }}</a>. 
+        {% else %}
+            {{ post.data.title }}. 
+        {% endif %}
+    {% endif %}
+    {{ post.templateContent | safe }}
+    <div class="post-meta"><a href="{{ post.url }}">#</a> / <span class="post-tags">{{ post.data.tags | formatTags }}</span> / {{ post.date | formatDate }}</div>
+</article>
+{% endfor %} 

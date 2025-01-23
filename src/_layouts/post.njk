@@ -1,0 +1,19 @@
+---
+layout: base
+eleventyExcludeFromCollections: false
+---
+<article>
+    <p>
+        {% if title %}
+            {% if external_url %}
+                <a href="{{ external_url }}">{{ title }}</a>. 
+            {% else %}
+                {{ title }}. 
+            {% endif %}
+        {% endif %}
+        {{ content | safe }}
+    </p>
+    <div class="post-meta"><a href="{{ page.url }}">#</a> / <span class="post-tags">{{ tags | formatTags }}</span> / {{ page.date | formatDate }}</div>
+</article>
+
+<p><a href="/">← Back home</a></p>
