@@ -4,6 +4,7 @@
   "description": "Personal notes and links blog",
   "main": "index.js",
   "scripts": {
+    "finalize": "node scripts/finalize-post.js",
     "start": "eleventy --serve",
     "clean": "rm -rf _site",
     "build": "npm run clean && eleventy"
