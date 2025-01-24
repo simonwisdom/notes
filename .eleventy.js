@@ -122,6 +122,11 @@ module.exports = function(eleventyConfig) {
     return Array.from(tags).sort();
   });
 
+  // Create a nojekyll file to prevent GitHub Pages from trying to build with Jekyll
+  eleventyConfig.addPassthroughCopy({
+    ".nojekyll": ".nojekyll"
+  });
+
   return {
     dir: {
       input: "src",
@@ -132,7 +137,6 @@ module.exports = function(eleventyConfig) {
     templateFormats: ["md", "njk", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
-    pathPrefix: "/" // This ensures URLs are correct on GitHub Pages
+    dataTemplateEngine: "njk"
   };
 }; 
