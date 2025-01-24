@@ -29,7 +29,9 @@ jobs:
         run: npm ci
         
       - name: Build site
-        run: npm run build
+        run: |
+          npm run build
+          ls -la _site
         
       - name: Setup Pages
         uses: actions/configure-pages@v4

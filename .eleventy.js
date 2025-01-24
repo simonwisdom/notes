@@ -36,6 +36,8 @@ function slugify(text) {
 }
 
 module.exports = function(eleventyConfig) {
+  const pathPrefix = ''; // Empty since using custom domain
+
   // Markdown configuration
   const markdownOptions = {
     html: true,
@@ -47,6 +49,7 @@ module.exports = function(eleventyConfig) {
 
   // Pass through files
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/CNAME");
   
   // Get first paragraph for excerpts
   eleventyConfig.addFilter("excerpt", (content) => {
@@ -128,6 +131,7 @@ module.exports = function(eleventyConfig) {
   });
 
   return {
+    pathPrefix: pathPrefix,
     dir: {
       input: "src",
       output: "_site",
