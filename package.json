@@ -20,10 +20,13 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "markdown-it": "^13.0.2",
+    "markdown-it": "^15.0.3",
     "markdown-it-anchor": "^8.6.7"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
+  },
+  "overrides": {
+    "markdown-it": "$markdown-it"
   }
 }

@@ -45,6 +45,8 @@ module.exports = function(eleventyConfig) {
     linkify: true
   };
   const markdownLib = markdownIt(markdownOptions).use(markdownItAnchor);
+  // markdown-it 15 stopped linking bare domains like example.com by default
+  markdownLib.linkify.set({ fuzzyLink: true });
   eleventyConfig.setLibrary("md", markdownLib);
 
   // Pass through files
